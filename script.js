@@ -51,4 +51,4 @@ const heartCreate = () => {
     }, 5000);
 };
 
-setInterval(heartCreate, 300);
+setInterval(heartCreate, 800);
