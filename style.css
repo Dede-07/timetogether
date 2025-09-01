@@ -76,14 +76,51 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* ===== CONTAGEM - LADO A LADO OU EMPILHADO ===== */
+.texto_countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaço entre os textos */
+    margin: 20px 0;
+    flex-wrap: wrap; /* ajuda na responsividade */
+}
+
 .texto_countdown {
     color: #ffd700; /* dourado, lembra casamento */
     font-family: 'Georgia', serif;
     font-size: 26px;
     text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05); /* fundo levinho translúcido */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Barrinha de separação estilo | */
+.texto_countdown-container span {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+/* Responsivo: empilha no celular */
+@media (max-width: 768px) {
+    .video {
+        width: 350px;
+        height: 200px;
+    }
+
+    .texto_countdown-container {
+        flex-direction: column;
+    }
+
+    .texto_countdown-container span {
+        display: none; /* some com a barrinha no mobile */
+    }
+}
+
+/* ===== ANIMAÇÃO DE CORAÇÕES ===== */
 .heart {
     position: fixed;
     top: 0;
@@ -105,11 +142,3 @@ h1 {
         opacity: 0;
     }
 }
-
-@media (max-width: 768px) {
-    .video {
-        width: 350px;
-        height: 200px;
-    }
-}
-
