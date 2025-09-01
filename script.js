@@ -52,3 +52,33 @@ const heartCreate = () => {
 };
 
 setInterval(heartCreate, 800);
+
+// Data do casamento (ano, mês-1, dia, hora, minuto)
+const dataCasamento = new Date(2027, 9, 9, 15, 15);
+
+function calcularContagemRegressiva() {
+    const agora = new Date();
+    let diferenca = dataCasamento - agora;
+
+    if (diferenca <= 0) {
+        document.getElementById('contadorCasamento').innerHTML = 
+            "🎉 Chegou o grande dia! 🎉";
+        return;
+    }
+
+    let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    let horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+    let minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+    let segundos = Math.floor((diferenca / 1000) % 60);
+
+    document.getElementById('contadorCasamento').innerHTML =
+        `Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos 💍`;
+}
+
+setInterval(calcularContagemRegressiva, 1000);
+window.onload = () => {
+    calcularTempoJuntos();
+    calcularContagemRegressiva();
+};
+
+
