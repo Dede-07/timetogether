@@ -76,6 +76,14 @@ h1 {
     margin-bottom: 20px;
 }
 
+.texto_countdown {
+    color: #ffd700; /* dourado, lembra casamento */
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    text-align: center;
+}
+
+
 .heart {
     position: fixed;
     top: 0;
@@ -104,3 +112,4 @@ h1 {
         height: 200px;
     }
 }
+
